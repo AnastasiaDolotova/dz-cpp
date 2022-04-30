@@ -27,6 +27,20 @@ Array::~Array() {
     delete[] m_arr;
 }
 
+Array &Array::operator=(Array &p_array) {
+    if (this == &p_array) return *this;
+
+    if (m_size != p_array.m_size) {
+        delete[] m_arr;
+        m_arr = new unsigned char[p_array.m_size];
+        m_size = p_array.m_size;
+    }
+    for (int i = 0; i < m_size; ++i) {
+        m_arr[i] = p_array[i];
+    }
+    return *this;
+}
+
 unsigned char &Array::operator[](size_t index) {
     return m_arr[index];
 }

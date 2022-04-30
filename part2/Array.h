@@ -18,6 +18,8 @@ public:
 
     virtual ~Array();
 
+    Array &operator=(Array &p_array);
+
     unsigned char &operator[](size_t index);
 
     const unsigned char &operator[](size_t index) const;
