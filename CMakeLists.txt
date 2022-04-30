@@ -12,4 +12,5 @@ add_executable(classes_and_inheritance
         part1/MinimalSumException.cpp part1/MinimalSumException.h
         part1/MaximumSumException.cpp part1/MaximumSumException.h
         part2/Decimal.cpp part2/Decimal.h
-        part2/BitString.cpp part2/BitString.h)
+        part2/BitString.cpp part2/BitString.h
+        part2/Array.cpp part2/Array.h)

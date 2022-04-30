@@ -5,7 +5,7 @@
 
 class Decimal {
 private:
-    unsigned char [100];
+
 };
 
 
