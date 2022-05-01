@@ -2,7 +2,7 @@
 #define CLASSES_AND_INHERITANCE_DECIMAL_H
 
 #include "Array.h"
-#include "C:\Users\sbpk\CLionProjects\classes_and_inheritance\ZeroDivideException.h"
+#include "../part1/ZeroDivideException.h"
 #include <cmath>
 
 //Задание 46

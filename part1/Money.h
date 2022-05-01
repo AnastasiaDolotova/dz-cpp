@@ -2,7 +2,7 @@
 #define CLASSES_AND_INHERITANCE_MONEY_H
 
 #include <iostream>
-#include "../ZeroDivideException.h"
+#include "ZeroDivideException.h"
 
 class Money {
 private:
