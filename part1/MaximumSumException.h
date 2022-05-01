@@ -1,6 +1,7 @@
 #ifndef CLASSES_AND_INHERITANCE_MAXIMUMSUMEXCEPTION_H
 #define CLASSES_AND_INHERITANCE_MAXIMUMSUMEXCEPTION_H
 
+#include <exception>
 #include <iostream>
 
 class MaximumSumException : public std::exception {

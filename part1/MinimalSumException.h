@@ -1,6 +1,7 @@
 #ifndef CLASSES_AND_INHERITANCE_MINIMALSUMEXCEPTION_H
 #define CLASSES_AND_INHERITANCE_MINIMALSUMEXCEPTION_H
 
+#include <exception>
 #include <iostream>
 
 class MinimalSumException : public std::exception {
