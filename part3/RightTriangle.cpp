@@ -1,10 +1,10 @@
 #include "RightTriangle.h"
 
-RightTriangle::RightTriangle(double p_first_side, double p_second_side, double p_angle) :
-        Triangle(p_first_side, p_second_side, p_angle) {}
+RightTriangle::RightTriangle(double p_first_side, double p_second_side) :
+        Triangle(p_first_side, p_second_side, 90.0) {}
 
 double RightTriangle::area() {
-    return m_first_side * m_second_side * sin(m_angle) / 2;
+    return m_first_side * m_second_side / 2;
 }
 
 double RightTriangle::perimeter() {

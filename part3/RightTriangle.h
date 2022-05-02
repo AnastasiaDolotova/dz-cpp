@@ -7,7 +7,7 @@ class RightTriangle : Triangle {
 public:
     RightTriangle() = default;
 
-    RightTriangle(double p_first_side, double p_second_side, double p_angle);
+    RightTriangle(double p_first_side, double p_second_side);
 
     double area() override;
 
