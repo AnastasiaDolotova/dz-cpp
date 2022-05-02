@@ -15,4 +15,4 @@ add_executable(classes_and_inheritance
         part2/BitString.cpp part2/BitString.h
         part2/Array.cpp part2/Array.h
         part2/IncompatibleDimException.cpp part2/IncompatibleDimException.h
-        part2/OutOfRangeException.cpp part2/OutOfRangeException.h part3/Triangle.h part3/RightTriangle.cpp part3/RightTriangle.h part3/IsoscelesTriangle.cpp part3/IsoscelesTriangle.h part3/Triangle.cpp)
+        part2/OutOfRangeException.cpp part2/OutOfRangeException.h part3/Triangle.h part3/RightTriangle.cpp part3/RightTriangle.h part3/IsoscelesTriangle.cpp part3/IsoscelesTriangle.h part3/Triangle.cpp part3/EquilateralTriangle.cpp part3/EquilateralTriangle.h)
