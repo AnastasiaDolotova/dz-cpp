@@ -4,6 +4,7 @@
 #include "Array.h"
 
 class BitString : Array {
+    static int amount;
 public:
     BitString();
 

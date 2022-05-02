@@ -111,7 +111,7 @@ int BitString::toInt() const {
 BitString BitString::toBit(int p_num) const {
     BitString res;
     std::string str;
-    while(p_num > 0){
+    while (p_num > 0) {
         str += char('0' + p_num % 2);
         p_num = p_num / 2;
         res.m_size++;
@@ -139,3 +139,5 @@ BitString BitString::toBit(std::string p_str) const {
     }
     return res;
 }
+
+int BitString::amount = 0;

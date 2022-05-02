@@ -10,7 +10,7 @@ Decimal::Decimal(size_t p_size) : Array(p_size) {
 
 Decimal::Decimal(size_t p_size, unsigned char *p_val) : Array(p_size, p_val) {
     amount++;
-};
+}
 
 int Decimal::get_amount() {
     return amount;
