@@ -103,6 +103,7 @@ std::ostream &operator<<(std::ostream &ost, Decimal p_decimal) {
     for (int i = 0; i < p_decimal.m_size; ++i) {
         ost << p_decimal.m_arr[i];
     }
+    ost << std::endl;
     return ost;
 }
 
