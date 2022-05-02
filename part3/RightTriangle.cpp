@@ -18,6 +18,7 @@ void RightTriangle::get() {
     std::cout << "Input second leg: ";
     std::cin >> m_second_side;
     std::cout << std::endl;
+    m_angle = 90.0;
 }
 
 void RightTriangle::put() {
