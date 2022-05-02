@@ -86,15 +86,15 @@ Decimal Decimal::toDecimal(std::string p_str) {
     return result;
 }
 
-Decimal Decimal::operator-(const Decimal &p_decimal) {
+Decimal Decimal::sub(const Decimal &p_decimal) {
     return toDecimal(toInt() - p_decimal.toInt());
 }
 
-Decimal Decimal::operator*(const Decimal &p_decimal) {
+Decimal Decimal::mul(const Decimal &p_decimal) {
     return toDecimal(toInt() * p_decimal.toInt());
 }
 
-Decimal Decimal::operator/(const Decimal &p_decimal) {
+Decimal Decimal::div(const Decimal &p_decimal) {
     if (p_decimal.toInt() == 0) throw ZeroDivideException();
     return toDecimal(toInt() / p_decimal.toInt());
 }

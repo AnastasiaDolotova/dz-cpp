@@ -38,11 +38,11 @@ public:
 
     bool operator==(Decimal &p_decimal);
 
-    Decimal operator-(const Decimal &p_decimal);
+    Decimal sub(const Decimal &p_decimal);
 
-    Decimal operator*(const Decimal &p_decimal);
+    Decimal mul(const Decimal &p_decimal);
 
-    Decimal operator/(const Decimal &p_decimal);
+    Decimal div(const Decimal &p_decimal);
 
 };
 
