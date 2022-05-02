@@ -44,6 +44,10 @@ public:
 
     Decimal div(const Decimal &p_decimal);
 
+    friend std::ostream &operator<<(std::ostream &ost, Decimal p_decimal);
+
+    friend std::istream &operator>>(std::istream &ist, Decimal p_decimal);
+
 };
 
 #endif //CLASSES_AND_INHERITANCE_DECIMAL_H
