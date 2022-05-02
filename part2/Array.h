@@ -34,6 +34,7 @@ public:
     virtual void add(const Array *p_array, Array *p_result) const;
 
     static int get_amount();
+
 };
 
 #endif //CLASSES_AND_INHERITANCE_ARRAY_H
