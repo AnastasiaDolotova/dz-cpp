@@ -1,6 +1,8 @@
 #ifndef CLASSES_AND_INHERITANCE_TRIANGLE_H
 #define CLASSES_AND_INHERITANCE_TRIANGLE_H
 
+//Задание 66
+
 #include <iostream>
 #include <cmath>
 

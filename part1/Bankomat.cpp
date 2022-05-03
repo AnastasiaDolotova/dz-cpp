@@ -7,38 +7,39 @@ Bankomat::Bankomat(int p_number, const Money &p_total_sum, const Money &p_min_su
 
 void Bankomat::banknotes_placement(Money &p_sum) {
     m_total_sum += p_sum;
+    std::cout << "Your money was successfully placed!" << std::endl;
 }
 
 void Bankomat::money_withdrawal(Money &p_sum) {
     if (p_sum < m_min_sum) throw MinimalSumException();
-    if (p_sum > m_max_sum) throw MaximumSumException();
+    if (p_sum > m_max_sum || p_sum > m_total_sum) throw MaximumSumException();
     m_total_sum -= p_sum;
 }
 
-std::string Bankomat::toString() {
+std::string Bankomat::to_string() {
     return std::to_string(m_total_sum.get_money());
 }
 
-int Bankomat::get_number() {
+int Bankomat::get_number() const {
     return m_number;
 }
 
 std::ostream &operator<<(std::ostream &ost, Bankomat &p_bankomat) {
-    ost << "Bankomat number: " << p_bankomat.m_number;
-    ost << "Total sum: " << p_bankomat.m_total_sum;
-    ost << "Minimal sum: " << p_bankomat.m_min_sum;
-    ost << "Maximum sum: " << p_bankomat.m_max_sum;
+    ost << "Bankomat number: " << p_bankomat.m_number << std::endl;
+    ost << "Total sum: " << p_bankomat.m_total_sum << std::endl;
+    ost << "Minimal sum: " << p_bankomat.m_min_sum << std::endl;
+    ost << "Maximum sum: " << p_bankomat.m_max_sum << std::endl;
     return ost;
 }
 
 std::istream &operator>>(std::istream &ist, Bankomat &p_bankomat) {
     std::cout << "Input bankomat number: ";
     ist >> p_bankomat.m_number;
-    std::cout << std::endl << "Input total sum: ";
+    std::cout << std::endl << "Input total sum: " << std::endl;
     ist >> p_bankomat.m_total_sum;
-    std::cout << std::endl << "Input minimal sum: ";
+    std::cout << std::endl << "Input minimal sum: " << std::endl;
     ist >> p_bankomat.m_min_sum;
-    std::cout << std::endl << "Input maximum sum: ";
+    std::cout << std::endl << "Input maximum sum: " << std::endl;
     ist >> p_bankomat.m_max_sum;
     std::cout << std::endl;
     return ist;

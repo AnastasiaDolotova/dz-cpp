@@ -6,8 +6,6 @@
 #include "MinimalSumException.h"
 #include "MaximumSumException.h"
 
-//Задача 45
-
 class Bankomat {
 private:
     int m_number;
@@ -23,9 +21,9 @@ public:
 
     void money_withdrawal(Money &p_sum);
 
-    std::string toString();
+    std::string to_string();
 
-    int get_number();
+    int get_number() const;
 
     friend std::ostream &operator<<(std::ostream &ost, Bankomat &p_bankomat);
 
