@@ -5,6 +5,5 @@
 int main(){
     Application app;
     app.run();
-    getch();
     return 0;
 }

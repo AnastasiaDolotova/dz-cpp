@@ -25,6 +25,8 @@ public:
     virtual void get() = 0;
 
     virtual void put() = 0;
+
+    virtual ~Triangle() = default;
 };
 
 

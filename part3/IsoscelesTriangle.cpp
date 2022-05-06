@@ -4,7 +4,7 @@ IsoscelesTriangle::IsoscelesTriangle(double p_side, double p_angle) :
         Triangle(p_side, p_side, p_angle) {}
 
 double IsoscelesTriangle::area() {
-    return pow(m_first_side, 2) * sin(m_angle) / 2;
+    return pow(m_first_side, 2) * std::abs(sin(m_angle)) / 2;
 }
 
 double IsoscelesTriangle::perimeter() {
@@ -22,6 +22,6 @@ void IsoscelesTriangle::get() {
 }
 
 void IsoscelesTriangle::put() {
-    std::cout << "Side: " << m_first_side << std::endl;
+    std::cout << "Sides: " << m_first_side << std::endl;
     std::cout << "Angle: " << m_angle << std::endl;
 }

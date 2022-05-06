@@ -3,7 +3,7 @@
 
 #include "Triangle.h"
 
-class RightTriangle : Triangle {
+class RightTriangle : public Triangle {
 public:
     RightTriangle() = default;
 

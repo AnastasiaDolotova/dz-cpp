@@ -26,6 +26,7 @@ void Application::run() {
         }
     }
     std::cout << "Press any key to exit..." << std::endl;
+    getch();
 }
 
 void Application::menu() {

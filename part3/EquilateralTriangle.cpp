@@ -20,5 +20,6 @@ void EquilateralTriangle::get() {
 }
 
 void EquilateralTriangle::put() {
-    std::cout << "Side: " << m_first_side << std::endl;
+    std::cout << "Sides: " << m_first_side << std::endl;
+    std::cout << "Angle: " << m_angle << std::endl;
 }

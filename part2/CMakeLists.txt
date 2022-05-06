@@ -11,4 +11,4 @@ add_executable(part2
         OutOfRangeException.cpp OutOfRangeException.h
         Application.cpp Application.h
         ZeroDivideException.cpp ZeroDivideException.h
-        main.cpp)
+        main.cpp ../part3/main.cpp ../part3/Application.cpp ../part3/Application.h)

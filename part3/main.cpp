@@ -1,6 +1,6 @@
 #include "Application.h"
 
-//Задача 46
+//Задача 66
 
 int main() {
     Application app;

@@ -3,7 +3,7 @@
 
 #include "Triangle.h"
 
-class IsoscelesTriangle : Triangle {
+class IsoscelesTriangle : public Triangle {
 public:
     IsoscelesTriangle() = default;
 
