@@ -100,10 +100,10 @@ Decimal Decimal::div(const Decimal &p_decimal) {
 }
 
 std::ostream &operator<<(std::ostream &ost, Decimal p_decimal) {
-    for (int i = 0; i < p_decimal.m_size; ++i) {
-        ost << p_decimal.m_arr[i];
-    }
-    ost << std::endl;
+//    for (int i = 0; i < p_decimal.m_size; ++i) {
+//        ost << p_decimal.m_arr[i];
+//    }
+    ost << p_decimal.toString() << std::endl;
     return ost;
 }
 
@@ -111,7 +111,11 @@ std::istream &operator>>(std::istream &ist, Decimal p_decimal) {
     std::cout << "Input decimal: ";
     std::string str;
     ist >> str;
-    p_decimal.m_size = str.size();
+    if (str.size() != p_decimal.m_size) {
+        p_decimal.m_size = str.size();
+        delete p_decimal.m_arr;
+        p_decimal.m_arr = new unsigned char [str.size()];
+    }
     for (int i = 0; i < str.size(); ++i) {
         p_decimal.m_arr[i] = str[i];
     }
