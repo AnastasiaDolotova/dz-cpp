@@ -3,7 +3,7 @@
 
 #include "Array.h"
 
-class BitString : Array {
+class BitString : public Array {
     static int amount;
 public:
     BitString();
@@ -12,7 +12,7 @@ public:
 
     BitString(size_t p_size, unsigned char *p_arr);
 
-    BitString b_add(const BitString &p_bit_str);
+    BitString b_and(const BitString &p_bit_str);
 
     BitString b_or(const BitString &p_bit_str);
 
@@ -26,9 +26,9 @@ public:
 
     void right(int p_bit);
 
-    friend std::ostream &operator<<(std::ostream &ost, BitString p_bit_str);
+    friend std::ostream &operator<<(std::ostream &ost, BitString &p_bit_str);
 
-    friend std::istream &operator>>(std::istream &ist, BitString p_bit_str);
+    friend std::istream &operator>>(std::istream &ist, BitString &p_bit_str);
 
     int toInt() const;
 

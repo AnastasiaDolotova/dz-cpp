@@ -24,9 +24,9 @@ void Application::run() {
                 try {
                     bankomat.money_withdrawal(money);
                 } catch (MinimalSumException &e) {
-                    std::cout << e.what() << std::endl;
+                    std::cerr << e.what() << std::endl;
                 } catch (MaximumSumException &e) {
-                    std::cout << e.what() << std::endl;
+                    std::cerr << e.what() << std::endl;
                 }
                 getch();
                 break;

@@ -17,6 +17,8 @@ public:
 
     Array(size_t p_size, unsigned char *p_val);
 
+    Array(const Array &p_array);
+
     virtual ~Array();
 
     Array &operator=(Array p_array);
@@ -29,7 +31,7 @@ public:
 
     friend std::ostream &operator<<(std::ostream &ost, Array p_array);
 
-    friend std::istream &operator>>(std::istream &ist, Array p_array);
+    friend std::istream &operator>>(std::istream &ist, Array &p_array);
 
     virtual void add(const Array *p_array, Array *p_result) const;
 

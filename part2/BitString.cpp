@@ -6,10 +6,11 @@ BitString::BitString(size_t p_size) : Array(p_size) {}
 
 BitString::BitString(size_t p_size, unsigned char *p_arr) : Array(p_size, p_arr) {}
 
-BitString BitString::b_add(const BitString &p_bit_str) {
+BitString BitString::b_and(const BitString &p_bit_str) {
     if (m_size != p_bit_str.m_size) throw IncompatibleDimException();
     BitString result;
     result.m_size = m_size;
+    result.m_arr = new unsigned char[m_size];
     for (int i = 0; i < m_size; ++i) {
         if (((*this)[i] == '1') && (p_bit_str[i] == '1')) result[i] = '1';
         else result[i] = '0';
@@ -21,6 +22,7 @@ BitString BitString::b_or(const BitString &p_bit_str) {
     if (m_size != p_bit_str.m_size) throw IncompatibleDimException();
     BitString result;
     result.m_size = m_size;
+    result.m_arr = new unsigned char[m_size];
     for (int i = 0; i < m_size; ++i) {
         if (((*this)[i] == '1') || (p_bit_str[i] == '1')) result[i] = '1';
         else result[i] = '0';
@@ -32,6 +34,7 @@ BitString BitString::b_xor(const BitString &p_bit_str) {
     if (m_size != p_bit_str.m_size) throw IncompatibleDimException();
     BitString result;
     result.m_size = m_size;
+    result.m_arr = new unsigned char[m_size];
     for (int i = 0; i < m_size; ++i) {
         if ((*this)[i] == p_bit_str[i]) result[i] = '0';
         else result[i] = '1';
@@ -42,6 +45,7 @@ BitString BitString::b_xor(const BitString &p_bit_str) {
 BitString BitString::b_not() {
     BitString result;
     result.m_size = m_size;
+    result.m_arr = new unsigned char[m_size];
     for (int i = 0; i < m_size; ++i) {
         if ((*this)[i] == '1') result[i] = '0';
         else result[i] = '1';
@@ -79,7 +83,7 @@ void BitString::right(int p_bit) {
     }
 }
 
-std::ostream &operator<<(std::ostream &ost, BitString p_bit_str) {
+std::ostream &operator<<(std::ostream &ost, BitString &p_bit_str) {
     for (int i = 0; i < p_bit_str.m_size; ++i) {
         ost << p_bit_str.m_arr[i];
     }
@@ -87,11 +91,15 @@ std::ostream &operator<<(std::ostream &ost, BitString p_bit_str) {
     return ost;
 }
 
-std::istream &operator>>(std::istream &ist, BitString p_bit_str) {
+std::istream &operator>>(std::istream &ist, BitString &p_bit_str) {
     std::cout << "Input bit string: ";
     std::string str;
     ist >> str;
-    p_bit_str.m_size = str.size();
+    if (str.size() != p_bit_str.m_size) {
+        p_bit_str.m_size = str.size();
+        delete p_bit_str.m_arr;
+        p_bit_str.m_arr = new unsigned char[str.size()];
+    }
     for (int i = 0; i < str.size(); ++i) {
         p_bit_str.m_arr[i] = str[i];
     }
@@ -116,6 +124,7 @@ BitString BitString::toBit(int p_num) const {
         p_num = p_num / 2;
         res.m_size++;
     }
+    res.m_arr = new unsigned char[res.m_size];
     for (int i = 0; i < res.m_size; ++i) {
         res.m_arr[res.m_size - 1 - i] = str[i];
     }

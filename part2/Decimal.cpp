@@ -43,9 +43,9 @@ bool Decimal::operator==(Decimal &p_decimal) {
 }
 
 int Decimal::toInt() const {
-    int result = 0, size = pow(10, m_size);
+    int result = 0, size = pow(10, m_size - 1);
     for (int i = 0; i < m_size; ++i) {
-        result += m_arr[i] * size;
+        result += (m_arr[i] - 48) * size;
         size /= 10;
     }
     return result;
@@ -62,7 +62,7 @@ Decimal Decimal::toDecimal(int p_num) const {
     result.m_arr = new unsigned char[i];
     i--;
     for (; i >= 0; --i) {
-        m_arr[i] = p_num % 10;
+        result.m_arr[i] = p_num % 10 + 48;
         p_num /= 10;
     }
     return result;
@@ -99,22 +99,19 @@ Decimal Decimal::div(const Decimal &p_decimal) {
     return toDecimal(toInt() / p_decimal.toInt());
 }
 
-std::ostream &operator<<(std::ostream &ost, Decimal p_decimal) {
-//    for (int i = 0; i < p_decimal.m_size; ++i) {
-//        ost << p_decimal.m_arr[i];
-//    }
+std::ostream &operator<<(std::ostream &ost, Decimal &p_decimal) {
     ost << p_decimal.toString() << std::endl;
     return ost;
 }
 
-std::istream &operator>>(std::istream &ist, Decimal p_decimal) {
+std::istream &operator>>(std::istream &ist, Decimal &p_decimal) {
     std::cout << "Input decimal: ";
     std::string str;
     ist >> str;
     if (str.size() != p_decimal.m_size) {
         p_decimal.m_size = str.size();
         delete p_decimal.m_arr;
-        p_decimal.m_arr = new unsigned char [str.size()];
+        p_decimal.m_arr = new unsigned char[str.size()];
     }
     for (int i = 0; i < str.size(); ++i) {
         p_decimal.m_arr[i] = str[i];

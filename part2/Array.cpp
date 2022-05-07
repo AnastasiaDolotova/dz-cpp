@@ -20,6 +20,13 @@ Array::Array(size_t p_size, unsigned char *p_val) : m_size(p_size) {
     amount++;
 }
 
+Array::Array(const Array &p_array): m_size(p_array.m_size) {
+    m_arr = new unsigned char[m_size];
+    for (int i = 0; i < m_size; ++i) {
+        m_arr[i] = p_array.m_arr[i];
+    }
+}
+
 Array::~Array() {
     delete[] m_arr;
 }
@@ -61,7 +68,7 @@ std::ostream &operator<<(std::ostream &ost, Array p_array) {
     return ost;
 }
 
-std::istream &operator>>(std::istream &ist, Array p_array) {
+std::istream &operator>>(std::istream &ist, Array &p_array) {
     size_t size;
     std::cout << "Input size of array: ";
     ist >> size;

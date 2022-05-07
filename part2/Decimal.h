@@ -2,7 +2,7 @@
 #define CLASSES_AND_INHERITANCE_DECIMAL_H
 
 #include "Array.h"
-#include "../part1/ZeroDivideException.h"
+#include "ZeroDivideException.h"
 #include <cmath>
 
 //Задание 46
@@ -44,9 +44,9 @@ public:
 
     Decimal div(const Decimal &p_decimal);
 
-    friend std::ostream &operator<<(std::ostream &ost, Decimal p_decimal);
+    friend std::ostream &operator<<(std::ostream &ost, Decimal &p_decimal);
 
-    friend std::istream &operator>>(std::istream &ist, Decimal p_decimal);
+    friend std::istream &operator>>(std::istream &ist, Decimal &p_decimal);
 
 };
 
